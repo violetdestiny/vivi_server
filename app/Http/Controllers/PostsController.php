@@ -8,38 +8,27 @@ use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostsController extends Controller
 {
- 
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    // Index - Shows Featured + All Posts
     public function index()
     {
-        return view('blog.index')
-            ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
+        $featuredPosts = Post::orderBy('created_at', 'DESC')->take(3)->get();
+        $posts = Post::orderBy('updated_at', 'DESC')->get();
+
+        return view('blog.index', compact('featuredPosts', 'posts'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // CREATE - Show Post Creation Form
     public function create()
     {
         return view('blog.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // STORE - Save New Post
     public function store(Request $request)
     {
         $request->validate([
@@ -49,7 +38,6 @@ class PostsController extends Controller
         ]);
 
         $newImageName = uniqid() . '-' . $request->title . '.' . $request->image->extension();
-
         $request->image->move(public_path('images'), $newImageName);
 
         Post::create([
@@ -60,41 +48,22 @@ class PostsController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
-        return redirect('/blog')
-            ->with('message', 'Your post has been added!');
+        return redirect('/blog')->with('message', 'Post created!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  string  $slug
-     * @return \Illuminate\Http\Response
-     */
+    // SHOW - Display Single Post
     public function show($slug)
     {
-        return view('blog.show')
-            ->with('post', Post::where('slug', $slug)->first());
+        return view('blog.show')->with('post', Post::where('slug', $slug)->first());
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  string  $slug
-     * @return \Illuminate\Http\Response
-     */
+    // EDIT - Show Post Edit Form
     public function edit($slug)
     {
-        return view('blog.edit')
-            ->with('post', Post::where('slug', $slug)->first());
+        return view('blog.edit')->with('post', Post::where('slug', $slug)->first());
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string  $slug
-     * @return \Illuminate\Http\Response
-     */
+    // UPDATE - Save Edited Post
     public function update(Request $request, $slug)
     {
         $request->validate([
@@ -102,31 +71,20 @@ class PostsController extends Controller
             'description' => 'required',
         ]);
 
-        Post::where('slug', $slug)
-            ->update([
-                'title' => $request->input('title'),
-                'description' => $request->input('description'),
-                'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
-                'user_id' => auth()->user()->id
-            ]);
+        Post::where('slug', $slug)->update([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
+            'user_id' => auth()->user()->id
+        ]);
 
-        return redirect('/blog')
-            ->with('message', 'Your post has been updated!');
+        return redirect('/blog')->with('message', 'Post updated!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // DESTROY - Delete Post
     public function destroy($slug)
     {
-        $post = Post::where('slug', $slug);
-        $post->delete();
-
-        return redirect('/blog')
-            ->with('message', 'Your post has been deleted!');
+        Post::where('slug', $slug)->delete();
+        return redirect('/blog')->with('message', 'Post deleted!');
     }
 }
-

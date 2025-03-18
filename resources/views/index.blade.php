@@ -1,5 +1,7 @@
 @extends('layouts.app')
+
 @section('content')
+    <!-- Hero Section -->
     <div class="background-image grid grid-cols-1 m-auto" style="background-image: url('https://cdn.pixabay.com/photo/2018/03/27/17/25/cat-3266673_1280.jpg'); background-size: cover; background-position: center;">
         <div class="flex text-gray-100 pt-10">
             <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
@@ -15,6 +17,7 @@
         </div>
     </div>
 
+    <!-- About Section -->
     <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200">
         <div class="rounded-lg overflow-hidden shadow-lg">
             <img src="https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720_1280.jpg" class="w-full h-96 object-cover" alt="Cute cat">
@@ -44,6 +47,7 @@
         </div>
     </div>
 
+    <!-- Featured Topics Section -->
     <div class="text-center p-15 bg-orange-100 text-gray-800">
         <h2 class="text-2xl pb-5 text-l">
             Featured Cat Topics
@@ -69,6 +73,7 @@
         </div>
     </div>
 
+    <!-- Recent Posts Section -->
     <div class="text-center py-15 bg-white">
         <div class="w-4/5 m-auto">
             <span class="uppercase text-sm text-gray-400">
@@ -85,6 +90,7 @@
         </div>
     </div>
 
+    <!-- Featured Story Section -->
     <div class="sm:grid grid-cols-2 w-4/5 m-auto mb-20">
         <div class="flex bg-gray-800 text-white pt-10 rounded-l-lg">
             <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">

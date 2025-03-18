@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@php
+    use Illuminate\Support\Str;
+@endphp
+
 @section('content')
     <style>
         .animate-enter {
@@ -41,7 +45,7 @@
 
         <!-- Featured Posts Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            @foreach($featuredPosts as $post)
+            @forelse($featuredPosts as $post)
                 <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
                     <a href="/blog/{{ $post->slug }}" class="block">
                         <div class="relative h-64 overflow-hidden">
@@ -61,7 +65,11 @@
                         </div>
                     </a>
                 </div>
-            @endforeach
+            @empty
+                <div class="col-span-full text-center text-gray-500">
+                    No featured posts found
+                </div>
+            @endforelse
         </div>
 
         <!-- Cat Care Section -->
@@ -98,7 +106,7 @@
 
         <!-- All Posts Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            @foreach($posts as $post)
+            @forelse($posts as $post)
                 <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
                     <a href="/blog/{{ $post->slug }}" class="block">
                         <div class="relative h-64 overflow-hidden">
@@ -118,13 +126,18 @@
                         </div>
                     </a>
                 </div>
-            @endforeach
+            @empty
+                <div class="col-span-full text-center text-gray-500">
+                    No posts found. Check back later!
+                </div>
+            @endforelse
         </div>
 
         <!-- Pagination -->
-        <div class="mb-20">
-            {{ $posts->links() }}
-        </div>
+        @if($posts->hasPages())
+            <div class="mb-20">
+                {{ $posts->links() }}
+            </div>
+        @endif
     </div>
-
 @endsection
