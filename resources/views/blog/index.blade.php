@@ -5,6 +5,30 @@
 @endphp
 
 @section('content')
+    <!-- New Navigation -->
+    <nav class="bg-orange-100 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex space-x-4">
+                    <!-- Logo -->
+                    <a href="/" class="flex items-center">
+                        <span class="text-2xl font-bold text-gray-800">🐾 Purrfect Posts</span>
+                    </a>
+
+                    <!-- Primary Nav -->
+                    <div class="hidden md:flex items-center space-x-6 ml-10">
+                        <a href="/" class="nav-link hover:text-orange-600">Home</a>
+                        <a href="{{ route('blog.index') }}" class="nav-link hover:text-orange-600">Blog</a>
+                        <a href="/adoption" class="nav-link hover:text-orange-600">Adoption</a>
+                        <a href="/care-guides" class="nav-link hover:text-orange-600">Care Guides</a>
+                        <a href="/diy-toys" class="nav-link hover:text-orange-600">DIY Toys</a>
+                        <a href="/reviews" class="nav-link hover:text-orange-600">Reviews</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <style>
         .animate-enter {
             animation: enter 1s ease-out;
@@ -29,6 +53,15 @@
 
         .category-badge {
             transition: all 0.3s ease;
+        }
+
+        /* New Nav Styles */
+        .nav-link {
+            @apply text-gray-700 px-3 py-2 rounded-md text-lg font-medium transition-colors;
+        }
+
+        .mobile-menu {
+            @apply md:hidden absolute top-0 inset-x-0 p-2 transition transform origin-top-right;
         }
     </style>
 
@@ -134,10 +167,10 @@
         </div>
 
         <!-- Pagination -->
-        @if($posts->hasPages())
-            <div class="mb-20">
-                {{ $posts->links() }}
-            </div>
-        @endif
+{{--        @if($posts->hasPages())--}}
+{{--            <div class="mb-20">--}}
+{{--                {{ $posts->links() }}--}}
+{{--            </div>--}}
+{{--        @endif--}}
     </div>
 @endsection
