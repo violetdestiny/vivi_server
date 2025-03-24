@@ -14,7 +14,9 @@
             <div class="bg-white p-4 rounded-lg shadow mb-4">
                 <h2 class="text-xl font-semibold">{{ $toy->name }}</h2>
                 <p class="text-gray-700">{{ $toy->description }}</p>
-                <a href="{{ route('diy.show', $toy->id) }}" class="text-blue-500 hover:underline">View Details</a>
+                <a href="{{ route('diy.show', $toy->id) }}" class="text-blue-500 hover:underline">
+                    View Details
+                </a>
             </div>
         @endforeach
     </div>

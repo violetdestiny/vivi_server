@@ -1,21 +1,22 @@
-<!-- resources/views/care/index.blade.php -->
-
 @extends('layouts.app')
 
-@section('title', 'Care Guides')
-
 @section('content')
-    <h1 class="text-3xl font-bold mb-4">Care Guides</h1>
-    <p class="mb-6">Learn how to take care of your pets with our guides.</p>
+    <div class="container mx-auto py-12">
+        <h1 class="text-4xl font-bold mb-8">Cat Care Guides</h1>
 
-    <!-- List of Care Guides -->
-    <div class="mt-6">
-        @foreach ($guides as $guide)
-            <div class="bg-white p-4 rounded-lg shadow mb-4">
-                <h2 class="text-xl font-semibold">{{ $guide->title }}</h2>
-                <p class="text-gray-700">{{ $guide->excerpt }}</p>
-                <a href="{{ route('care.show', $guide->id) }}" class="text-blue-500 hover:underline">Read More</a>
-            </div>
-        @endforeach
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @foreach($guides as $guide)
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="{{ asset($guide->image_path ?? 'images/default-guide.jpg') }}"
+                         alt="{{ $guide->title }}"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold mb-2">{{ $guide->title }}</h2>
+                        <a href="{{ route('care.show', $guide) }}"
+                           class="text-blue-600 hover:underline">Read Guide</a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection
