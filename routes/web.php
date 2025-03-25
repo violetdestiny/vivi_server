@@ -44,3 +44,4 @@ Route::get('/diy-toys/{toy}', [DIYToyController::class, 'show'])->name('diy.show
 Route::get('/reviews', [ProductReviewController::class, 'index'])->name('reviews.index');
 Route::get('/reviews/create', [ProductReviewController::class, 'create'])->middleware('auth');
 Route::post('/reviews', [ProductReviewController::class, 'store'])->middleware('auth');
+Route::get('/reviews/{review}', [ProductReviewController::class, 'show'])->name('reviews.show');
