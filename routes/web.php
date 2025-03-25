@@ -31,6 +31,8 @@ Route::get('/adoption', [AdoptionController::class, 'index'])->name('adoption.in
 Route::get('/adoption/{cat}', [AdoptionController::class, 'show'])->name('adoption.show');
 Route::get('/adoption/{cat}/apply', [AdoptionController::class, 'applicationForm'])->name('adoption.application');
 Route::post('/adoption/apply', [AdoptionController::class, 'apply'])->name('adoption.apply.submit');// Cat Care Guide
+
+
 Route::get('/care-guides', [CareGuideController::class, 'index'])->name('care.index');
 Route::get('/care-guides/{guide}', [CareGuideController::class, 'show'])->name('care.show');
 
