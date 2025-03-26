@@ -14,25 +14,37 @@ class AdoptionController extends Controller
 {
     public function index()
     {
-        $cats = Cat::all();
+        $cats = Cat::where('available_for_adoption', true)->get();
         return view('adoption.index', compact('cats'));
     }
 
     public function show($id)
     {
         $cat = Cat::findOrFail($id);
+
+        // Check if cat is available for adoption
+        if (!$cat->available_for_adoption) {
+            return redirect()->route('adoption.index')
+                ->with('error', 'This cat is no longer available for adoption.');
+        }
+
         return view('adoption.show', compact('cat'));
     }
 
     public function applicationForm($id)
     {
         $cat = Cat::findOrFail($id);
+
+        if (!$cat->available_for_adoption) {
+            return redirect()->route('adoption.index')
+                ->with('error', 'This cat is no longer available for adoption.');
+        }
+
         return view('adoption.application', compact('cat'));
     }
 
     public function apply(Request $request)
     {
-        // Validate the form data
         $validatedData = $request->validate([
             'cat_id' => 'required|exists:cats,id',
             'name' => 'required|string|max:255',
@@ -53,9 +65,15 @@ class AdoptionController extends Controller
         ]);
 
         try {
-            // Create new adoption application
-            $application = new AdoptionApplication();
-            $application->fill([
+            $cat = Cat::findOrFail($validatedData['cat_id']);
+
+            if (!$cat->available_for_adoption) {
+                return back()
+                    ->withInput()
+                    ->with('error', 'This cat is no longer available for adoption.');
+            }
+
+            $application = AdoptionApplication::create([
                 'cat_id' => $validatedData['cat_id'],
                 'applicant_name' => $validatedData['name'],
                 'applicant_email' => $validatedData['email'],
@@ -73,13 +91,11 @@ class AdoptionController extends Controller
                 'vet_reference' => $validatedData['vet_reference'] ?? null,
                 'status' => 'pending',
                 'ip_address' => $request->ip()
-            ])->save();
+            ]);
 
-            // Send confirmation to applicant
             Mail::to($application->applicant_email)
                 ->send(new AdoptionApplicationReceived($application));
 
-            // Notify admin (using config settings)
             if (config('admin.email')) {
                 Mail::to(config('admin.email'))
                     ->send(new NewAdoptionApplication($application));

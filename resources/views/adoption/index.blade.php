@@ -7,6 +7,18 @@
         <h1 class="text-3xl font-bold mb-4 text-gray-800">Adoption Corner</h1>
         <p class="mb-8 text-lg text-gray-600">Browse through our adorable cats available for adoption!</p>
 
+        @if(session('success'))
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
+                {{ session('error') }}
+            </div>
+        @endif
+
         @if($cats->isEmpty())
             <div class="bg-white p-6 rounded-lg shadow text-center">
                 <p class="text-gray-500">Currently no cats available for adoption. Please check back later!</p>
@@ -28,13 +40,13 @@
                             <p class="text-gray-600 mb-4">{{ Str::limit($cat->description, 100) }}</p>
 
                             <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500">
-                                @if($cat->age)
-                                    {{ $cat->age }} years old
-                                @else
-                                    Age unknown
-                                @endif
-                            </span>
+                                <span class="text-sm text-gray-500">
+                                    @if($cat->age)
+                                        {{ $cat->age }} years old
+                                    @else
+                                        Age unknown
+                                    @endif
+                                </span>
 
                                 <div class="space-x-2">
                                     <a href="{{ route('adoption.show', $cat->id) }}"

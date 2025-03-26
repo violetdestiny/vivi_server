@@ -27,11 +27,12 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // Adoption Corner
 
 // Adoption Routes
-Route::get('/adoption', [AdoptionController::class, 'index'])->name('adoption.index');
-Route::get('/adoption/{cat}', [AdoptionController::class, 'show'])->name('adoption.show');
-Route::get('/adoption/{cat}/apply', [AdoptionController::class, 'applicationForm'])->name('adoption.application');
-Route::post('/adoption/apply', [AdoptionController::class, 'apply'])->name('adoption.apply.submit');// Cat Care Guide
-
+Route::prefix('adoption')->group(function() {
+    Route::get('/', [AdoptionController::class, 'index'])->name('adoption.index');
+    Route::get('/{cat}', [AdoptionController::class, 'show'])->name('adoption.show');
+    Route::get('/{cat}/apply', [AdoptionController::class, 'applicationForm'])->name('adoption.application');
+    Route::post('/apply', [AdoptionController::class, 'apply'])->name('adoption.apply.submit');
+});
 
 Route::get('/care-guides', [CareGuideController::class, 'index'])->name('care.index');
 Route::get('/care-guides/{guide}', [CareGuideController::class, 'show'])->name('care.show');

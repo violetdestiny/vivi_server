@@ -8,7 +8,7 @@
             <img src="{{ asset('images/miffy/miffy-character.png') }}" class="w-24">
         </div>
         <div class="absolute bottom-10 right-10 opacity-30 miffy-float" style="animation-delay: 0.5s">
-            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-24"> <!-- Updated -->
+            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-24">
         </div>
 
         <div class="flex text-white pt-10 relative z-10">
@@ -26,7 +26,7 @@
     <!-- About Section -->
     <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b-2 border-miffy-pink">
         <div class="rounded-xl overflow-hidden shadow-lg border-2 border-miffy-brown">
-            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-full h-96 object-contain p-8 bg-miffy-peach" alt="Miffy logo"> <!-- Updated -->
+            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-full h-96 object-contain p-8 bg-miffy-peach" alt="Miffy logo">
         </div>
 
         <div class="m-auto sm:m-auto text-left w-4/5 block">
@@ -34,11 +34,11 @@
                 Discover the Wonderful World of Cats
             </h2>
 
-            <p class="text-lg text-gray-600 mb-8">
+            <p class="text-lg text-gray-700 mb-8">
                 Join our community of cat lovers sharing stories about:
             </p>
 
-            <ul class="list-disc list-inside space-y-4 text-gray-600 mb-12">
+            <ul class="list-disc list-inside space-y-4 text-gray-700 mb-12">
                 <li class="flex items-start">
                     <img src="{{ asset('images/miffy/miffy-paw.png') }}" class="w-5 h-5 mr-2 mt-1">
                     <span>Adorable kitten adventures</span>
@@ -70,43 +70,43 @@
         </h2>
 
         <div class="grid md:grid-cols-4 gap-8 py-8 w-4/5 mx-auto">
-            <div class="miffy-card p-6 rounded-xl">
+            <div class="miffy-card p-6 rounded-xl bg-white border border-miffy-brown">
                 <div class="bg-miffy-pink text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-10 h-10"> <!-- Updated -->
+                    <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-10 h-10">
                 </div>
                 <h3 class="font-bold block text-xl mb-2">Care</h3>
-                <p class="text-sm">Health & Nutrition</p>
-                <a href="/care-guides" class="text-miffy-pink hover:underline mt-2 inline-block text-xs">
+                <p class="text-sm text-gray-700">Health & Nutrition</p>
+                <a href="/care-guides" class="text-miffy-pink hover:underline mt-2 inline-block text-xs font-semibold">
                     Learn more →
                 </a>
             </div>
-            <div class="miffy-card p-6 rounded-xl">
+            <div class="miffy-card p-6 rounded-xl bg-white border border-miffy-brown">
                 <div class="bg-miffy-pink text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-10 h-10"> <!-- Updated -->
+                    <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-10 h-10">
                 </div>
                 <h3 class="font-bold block text-xl mb-2">Behavior</h3>
-                <p class="text-sm">Understanding Your Cat</p>
-                <a href="/care-guides#behavior" class="text-miffy-pink hover:underline mt-2 inline-block text-xs">
+                <p class="text-sm text-gray-700">Understanding Your Cat</p>
+                <a href="/care-guides#behavior" class="text-miffy-pink hover:underline mt-2 inline-block text-xs font-semibold">
                     Learn more →
                 </a>
             </div>
-            <div class="miffy-card p-6 rounded-xl">
+            <div class="miffy-card p-6 rounded-xl bg-white border border-miffy-brown">
                 <div class="bg-miffy-pink text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-10 h-10"> <!-- Updated -->
+                    <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-10 h-10">
                 </div>
                 <h3 class="font-bold block text-xl mb-2">Play</h3>
-                <p class="text-sm">Toys & Activities</p>
-                <a href="/diy-toys" class="text-miffy-pink hover:underline mt-2 inline-block text-xs">
+                <p class="text-sm text-gray-700">Toys & Activities</p>
+                <a href="/diy-toys" class="text-miffy-pink hover:underline mt-2 inline-block text-xs font-semibold">
                     Learn more →
                 </a>
             </div>
-            <div class="miffy-card p-6 rounded-xl">
+            <div class="miffy-card p-6 rounded-xl bg-white border border-miffy-brown">
                 <div class="bg-miffy-pink text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-10 h-10"> <!-- Updated -->
+                    <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-10 h-10">
                 </div>
                 <h3 class="font-bold block text-xl mb-2">Rescue</h3>
-                <p class="text-sm">Adoption Stories</p>
-                <a href="/adoption" class="text-miffy-pink hover:underline mt-2 inline-block text-xs">
+                <p class="text-sm text-gray-700">Adoption Stories</p>
+                <a href="/adoption" class="text-miffy-pink hover:underline mt-2 inline-block text-xs font-semibold">
                     Learn more →
                 </a>
             </div>
@@ -114,27 +114,27 @@
     </div>
 
     <!-- Recent Posts Section -->
-    <div class="text-center py-15 bg-white">
+    <div class="text-center py-15 bg-miffy-peach">
         <div class="w-4/5 m-auto">
             <div class="flex justify-center mb-4">
                 <img src="{{ asset('images/miffy/miffy-paw.png') }}" class="w-8 h-8 mx-2">
-                <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-8 h-8 mx-2"> <!-- Updated -->
+                <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-8 h-8 mx-2">
                 <img src="{{ asset('images/miffy/miffy-paw.png') }}" class="w-8 h-8 mx-2">
             </div>
             <h2 class="text-4xl font-bold py-10 text-miffy-brown">
                 Latest Cat Tales
             </h2>
-            <p class="text-lg text-gray-600 mb-16">
+            <p class="text-lg text-gray-700 mb-16">
                 Discover fresh stories from our feline-loving community
             </p>
         </div>
     </div>
 
     <!-- Featured Story Section -->
-    <div class="sm:grid grid-cols-2 w-4/5 m-auto mb-20 rounded-xl overflow-hidden border-2 border-miffy-brown">
+    <div class="sm:grid grid-cols-2 w-4/5 m-auto mb-20 rounded-xl overflow-hidden border-2 border-miffy-brown bg-white">
         <div class="flex bg-miffy-brown text-white pt-10">
             <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
-                <span class="uppercase text-xs text-miffy-pink">
+                <span class="uppercase text-xs text-miffy-pink font-semibold">
                     Kitten Care
                 </span>
                 <h3 class="text-2xl font-bold py-10">
@@ -149,7 +149,7 @@
             </div>
         </div>
         <div class="rounded-r-lg overflow-hidden">
-            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-full h-full object-contain bg-miffy-peach p-8" alt="Miffy logo"> <!-- Updated -->
+            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-full h-full object-contain bg-miffy-peach p-8" alt="Miffy logo">
         </div>
     </div>
 
@@ -173,6 +173,22 @@
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
+        }
+        .miffy-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .miffy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .miffy-button {
+            background-color: var(--miffy-brown);
+            box-shadow: 0 4px 0 rgba(92, 58, 33, 0.3);
+        }
+        .miffy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 rgba(92, 58, 33, 0.3);
         }
     </style>
 @endsection
