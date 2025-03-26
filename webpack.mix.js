@@ -1,14 +1,6 @@
 const mix = require('laravel-mix');
-const tailwindcss = require('tailwindcss');
 
-mix
-    .js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
-        require('postcss-import'),
-        tailwindcss('./tailwind.config.js'), // Explicitly pass the config file
-        require('autoprefixer'),
+        require('tailwindcss'),
     ]);
-
-if (mix.inProduction()) {
-    mix.version();
-}
