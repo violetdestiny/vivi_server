@@ -16,6 +16,14 @@
             <!-- Review Card -->
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <div class="flex justify-between items-start mb-4">
+                    // Around line 15
+                    <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-semibold">
+    @if($review->review_type === 'website')
+                            Website Review
+                        @else
+                            {{ ucfirst($review->review_type) }}
+                        @endif
+</span>
                 <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-semibold">
                     {{ ucfirst($review->type) }}
                 </span>

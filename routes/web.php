@@ -42,7 +42,11 @@ Route::get('/diy-toys', [DIYToyController::class, 'index'])->name('diy.index');
 Route::get('/diy-toys/{toy}', [DIYToyController::class, 'show'])->name('diy.show');
 
 // Product Reviews
-Route::get('/reviews', [ProductReviewController::class, 'index'])->name('reviews.index');
-Route::get('/reviews/create', [ProductReviewController::class, 'create'])->middleware('auth');
-Route::post('/reviews', [ProductReviewController::class, 'store'])->middleware('auth');
-Route::get('/reviews/{review}', [ProductReviewController::class, 'show'])->name('reviews.show');
+Route::prefix('reviews')->group(function() {
+    Route::get('/', [ProductReviewController::class, 'index'])->name('reviews.index');
+    Route::middleware('auth')->group(function() {
+        Route::get('/create', [ProductReviewController::class, 'create'])->name('reviews.create');
+        Route::post('/', [ProductReviewController::class, 'store'])->name('reviews.store');
+    });
+    Route::get('/{review}', [ProductReviewController::class, 'show'])->name('reviews.show');
+});

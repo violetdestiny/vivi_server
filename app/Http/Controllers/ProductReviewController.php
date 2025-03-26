@@ -10,39 +10,9 @@ class ProductReviewController extends Controller
 {
     public function index(Request $request)
     {
-        // Temporary sample data - remove this when you have real reviews
-        $reviews = collect([
-            (object)[
-                'id' => 1,
-                'user' => (object)['name' => 'CatLover42'],
-                'title' => 'Premium Scratching Post',
-                'type' => 'product',
-                'rating' => 5,
-                'content' => 'This scratching post has saved my furniture! Sturdy construction and my cats love it.',
-                'created_at' => now()->subDays(2),
-                'image_path' => null
-            ],
-            (object)[
-                'id' => 2,
-                'user' => (object)['name' => 'WhiskerWatcher'],
-                'title' => 'Paws & Relax Cafe',
-                'type' => 'cafe',
-                'rating' => 4,
-                'content' => 'Lovely atmosphere with 15 resident cats. The caramel latte was amazing too!',
-                'created_at' => now()->subDays(5),
-                'image_path' => null
-            ],
-            (object)[
-                'id' => 3,
-                'user' => (object)['name' => 'PurrfectParent'],
-                'title' => 'Automatic Litter Box',
-                'type' => 'product',
-                'rating' => 3,
-                'content' => 'Works well but quite loud. My cat was scared of it at first but now uses it regularly.',
-                'created_at' => now()->subWeek(),
-                'image_path' => null
-            ]
-        ]);
+        $reviews = ProductReview::with('user')
+            ->latest()
+            ->paginate(9);
 
         return view('reviews.index', compact('reviews'));
     }
@@ -64,9 +34,9 @@ class ProductReviewController extends Controller
 
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'type' => 'required|in:product,cafe,service,other',
+            'review_type' => 'required|in:product,cafe,service,website',
             'rating' => 'required|integer|between:1,5',
-            'content' => 'required|string',
+            'content' => 'required|string|min:20',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
@@ -75,27 +45,34 @@ class ProductReviewController extends Controller
             $imagePath = $request->file('image')->store('review_images', 'public');
         }
 
-        ProductReview::create([
-            'user_id' => Auth::id(),
+        $newReview = [
+            'id' => rand(100, 999), // Temporary ID for display
+            'user' => ['name' => Auth::user()->name],
             'title' => $validated['title'],
-            'type' => $validated['type'],
+            'review_type' => $validated['review_type'],
             'rating' => $validated['rating'],
             'content' => $validated['content'],
-            'image_path' => $imagePath
-        ]);
+            'image_path' => $imagePath,
+            'created_at' => now()
+        ];
 
-        return redirect()->route('reviews.index')->with('success', 'Review added successfully!');
+        return redirect()
+            ->route('reviews.index')
+            ->with('new_review', $newReview)
+            ->with('success', 'Review added successfully!');
     }
-
-
     public function show(ProductReview $review)
     {
+        $relatedReviews = ProductReview::where('review_type', $review->review_type)
+            ->where('id', '!=', $review->id)
+            ->with('user')
+            ->latest()
+            ->take(3)
+            ->get();
+
         return view('reviews.show', [
             'review' => $review,
-            'relatedReviews' => ProductReview::where('type', $review->type)
-                ->where('id', '!=', $review->id)
-                ->take(3)
-                ->get()
+            'relatedReviews' => $relatedReviews
         ]);
     }
 }
