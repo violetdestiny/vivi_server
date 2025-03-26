@@ -51,7 +51,7 @@ Easy to extend with new cat-egories!
 
 📸 Preview
 Screenshot
-(Example: Review page with cat photos and ratings!)
+
 
 🎉 How to Contribute
 Love cats and code? We’d love your help!
@@ -65,7 +65,7 @@ Add more cat puns 😹
 bash
 Copy
 git checkout -b feature/your-cat-idea
-Made with ❤️ (and cat hair) by [Your Name].
+Made with ❤️ (and cat hair) by Ikram .
 Meow-tastic thanks to the Laravel community!
 
 🐱 Adopt, don’t shop! 🐱
