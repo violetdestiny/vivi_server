@@ -24,41 +24,143 @@
 
         <!-- Featured Posts Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            @forelse($featuredPosts as $post)
-                <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
-                    <a href="/blog/{{ $post->slug }}" class="block">
-                        <div class="relative h-64 overflow-hidden">
-                            @if($post->image_path)
-                                <img src="{{ asset('images/' . $post->image_path) }}"
-                                     alt="{{ $post->title }}"
-                                     class="w-full h-full object-cover transition duration-500">
-                            @else
-                                <!-- Default Miffy-themed cat image -->
-                                <img src="{{ asset('images/miffy/miffy-cat1.png') }}"
-                                     class="w-full h-full object-contain p-6 bg-miffy-peach">
-                            @endif
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
+            <!-- Blog Post 1: Kitten Care -->
+            <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
+                <a href="/blog/kitten-care-101" class="block">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="{{ asset('images/miffy/blog-kitten.jpg') }}"
+                             alt="Adorable kitten"
+                             class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="category-badge bg-miffy-pink text-white px-3 py-1 rounded-full text-sm inline-block mb-4">
+                            Kitten Care
                         </div>
-                        <div class="p-6">
-                            <div class="category-badge bg-miffy-pink text-white px-3 py-1 rounded-full text-sm inline-block mb-4">
-                                {{ $post->category ?? 'Cat Life' }}
-                            </div>
-                            <h3 class="text-xl font-bold text-miffy-brown mb-2">{{ $post->title }}</h3>
-                            <p class="text-gray-600 mb-4">{{ Str::limit($post->description, 80) }}</p>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-5 h-5 mr-2">
-                                <span>{{ $post->created_at->diffForHumans() }}</span>
-                            </div>
+                        <h3 class="text-xl font-bold text-miffy-brown mb-2">Kitten Care 101: Your Complete Guide</h3>
+                        <p class="text-gray-600 mb-4">Everything you need to know about raising a happy, healthy kitten from day one.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-5 h-5 mr-2">
+                            <span>2 days ago</span>
                         </div>
-                    </a>
-                </div>
-            @empty
-                <div class="col-span-full text-center text-gray-500 miffy-card p-8">
-                    <img src="{{ asset('images/miffy/miffy-cat2.png') }}" class="w-32 mx-auto mb-4">
-                    <p class="text-lg">No featured posts found</p>
-                    <p class="text-sm text-miffy-pink">Check back later for cute cat stories!</p>
-                </div>
-            @endforelse
+                    </div>
+                </a>
+            </div>
+
+            <!-- Blog Post 2: Cat Behavior -->
+            <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
+                <a href="/blog/understanding-cat-behavior" class="block">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="{{ asset('images/miffy/blog-behavior.jpg') }}"
+                             alt="Cat showing curious behavior"
+                             class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="category-badge bg-miffy-pink text-white px-3 py-1 rounded-full text-sm inline-block mb-4">
+                            Behavior
+                        </div>
+                        <h3 class="text-xl font-bold text-miffy-brown mb-2">Decoding Cat Behavior: What Your Cat is Really Saying</h3>
+                        <p class="text-gray-600 mb-4">Learn to interpret your cat's body language and vocalizations like a pro.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-5 h-5 mr-2">
+                            <span>1 week ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Blog Post 3: DIY Cat Toys -->
+            <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
+                <a href="/blog/diy-cat-toys" class="block">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="{{ asset('images/miffy/blog-toys.jpg') }}"
+                             alt="Homemade cat toys"
+                             class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="category-badge bg-miffy-pink text-white px-3 py-1 rounded-full text-sm inline-block mb-4">
+                            DIY Projects
+                        </div>
+                        <h3 class="text-xl font-bold text-miffy-brown mb-2">10 Easy DIY Cat Toys Your Feline Will Love</h3>
+                        <p class="text-gray-600 mb-4">Budget-friendly toy ideas using common household items that will keep your cat entertained for hours.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-5 h-5 mr-2">
+                            <span>2 weeks ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Blog Post 4: Senior Cat Care -->
+            <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
+                <a href="/blog/senior-cat-care" class="block">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="{{ asset('images/miffy/blog-senior.jpg') }}"
+                             alt="Senior cat resting"
+                             class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="category-badge bg-miffy-pink text-white px-3 py-1 rounded-full text-sm inline-block mb-4">
+                            Senior Care
+                        </div>
+                        <h3 class="text-xl font-bold text-miffy-brown mb-2">Caring for Your Senior Cat: A Compassionate Guide</h3>
+                        <p class="text-gray-600 mb-4">Special considerations and tips for keeping your older cat comfortable and happy in their golden years.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-5 h-5 mr-2">
+                            <span>3 weeks ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Blog Post 5: Cat Nutrition -->
+            <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
+                <a href="/blog/cat-nutrition-guide" class="block">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="{{ asset('images/miffy/blog-nutrition.jpg') }}"
+                             alt="Healthy cat food"
+                             class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="category-badge bg-miffy-pink text-white px-3 py-1 rounded-full text-sm inline-block mb-4">
+                            Nutrition
+                        </div>
+                        <h3 class="text-xl font-bold text-miffy-brown mb-2">The Ultimate Cat Nutrition Guide: What to Feed for Optimal Health</h3>
+                        <p class="text-gray-600 mb-4">Breaking down the essentials of feline nutrition and how to choose the best food for your cat.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-5 h-5 mr-2">
+                            <span>1 month ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Blog Post 6: Rescue Story -->
+            <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
+                <a href="/blog/rescue-story-whiskers" class="block">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="{{ asset('images/miffy/blog-rescue.jpg') }}"
+                             alt="Rescue cat being cuddled"
+                             class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="category-badge bg-miffy-pink text-white px-3 py-1 rounded-full text-sm inline-block mb-4">
+                            Rescue Stories
+                        </div>
+                        <h3 class="text-xl font-bold text-miffy-brown mb-2">From Stray to Spoiled: Whiskers' Heartwarming Rescue Story</h3>
+                        <p class="text-gray-600 mb-4">How one scared stray transformed into the most loving companion with patience and care.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-5 h-5 mr-2">
+                            <span>1 month ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
 
         <!-- Cat Care Section -->
@@ -116,49 +218,6 @@
             </div>
         </div>
 
-        <!-- Rest of your content remains the same -->
-        <!-- All Posts Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            @forelse($posts as $post)
-                <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
-                    <a href="/blog/{{ $post->slug }}" class="block">
-                        <div class="relative h-64 overflow-hidden">
-                            @if($post->image_path)
-                                <img src="{{ asset('images/' . $post->image_path) }}"
-                                     alt="{{ $post->title }}"
-                                     class="w-full h-full object-cover transition duration-500">
-                            @else
-                                <!-- Default Miffy-themed cat image -->
-                                <div class="w-full h-full bg-miffy-peach flex items-center justify-center">
-                                    <img src="{{ asset('images/miffy/miffy-character.png') }}" class="w-32">
-                                </div>
-                            @endif
-                        </div>
-                        <div class="p-6">
-                            <div class="category-badge bg-miffy-pink text-white px-3 py-1 rounded-full text-sm inline-block mb-4">
-                                {{ $post->category ?? 'Cat Tales' }}
-                            </div>
-                            <h3 class="text-xl font-bold text-miffy-brown mb-2">{{ $post->title }}</h3>
-                            <p class="text-gray-600 mb-4">{{ Str::limit($post->description, 80) }}</p>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <img src="{{ asset('images/miffy/miffy-paw.png') }}" class="w-4 h-4 mr-1">
-                                <span>{{ $post->created_at->diffForHumans() }}</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            @empty
-                <div class="col-span-full text-center miffy-card p-8">
-                    <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-40 mx-auto mb-6">
-                    <h3 class="text-2xl font-bold text-miffy-brown mb-2">No posts yet!</h3>
-                    <p class="text-gray-600 mb-4">Be the first to share your cat story</p>
-                    <a href="{{ route('blog.create') }}" class="miffy-button inline-block px-6 py-2">
-                        Write Post
-                    </a>
-                </div>
-            @endforelse
-        </div>
-
         <!-- Newsletter Section -->
         <div class="bg-miffy-peach rounded-xl p-8 mb-20 text-center border-2 border-miffy-brown">
             <div class="max-w-2xl mx-auto">
@@ -205,6 +264,27 @@
 
         .miffy-float {
             animation: float 4s ease-in-out infinite;
+        }
+
+        .miffy-card {
+            box-shadow: 5px 5px 0 var(--miffy-brown);
+            transition: all 0.3s ease;
+        }
+        .miffy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 0 var(--miffy-brown);
+        }
+        .miffy-button {
+            background-color: var(--miffy-pink);
+            color: white;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--miffy-brown);
+            font-weight: bold;
+        }
+        .miffy-button:hover {
+            background-color: var(--miffy-brown);
+            transform: scale(1.05);
         }
     </style>
 @endsection
