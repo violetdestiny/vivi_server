@@ -223,6 +223,12 @@
                     <div class="flex items-center space-x-3">
                         <span class="text-white font-bold">{{ Auth::user()->name }}</span>
                         <img src="https://i.imgur.com/VbnUQpn.png" class="h-8 w-8 rounded-full border-2 border-white">
+
+                        <!-- Added Create Post Button -->
+                        <a href="{{ route('blog.create') }}" class="miffy-button px-3 py-1 text-sm no-underline">
+                            Create Post
+                        </a>
+
                         <a href="{{ route('logout') }}"
                            class="miffy-link no-underline"
                            onclick="event.preventDefault();
@@ -276,6 +282,17 @@
                         Register
                     </a>
                 @endif
+            @else
+                <!-- Added Create Post Button to Mobile Menu -->
+                <a href="{{ route('blog.create') }}" class="block text-center px-4 py-2 rounded-lg text-base font-medium text-white bg-miffy-brown hover:bg-miffy-pink">
+                    Create Post
+                </a>
+                <a href="{{ route('logout') }}"
+                   class="block px-4 py-2 rounded-lg text-base font-medium text-gray-800 hover:bg-white"
+                   onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
             @endguest
         </div>
     </div>
