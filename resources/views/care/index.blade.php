@@ -3,24 +3,10 @@
 @section('content')
     <div class="min-h-screen bg-miffy-peach">
         <div class="container mx-auto py-12 px-4">
-            <!-- Header Section -->
+            <!-- Header Section - Simplified -->
             <div class="text-center mb-12">
                 <h1 class="text-4xl font-bold text-miffy-brown mb-2">Miffy's Cat Care Guides</h1>
-                <p class="text-miffy-brown max-w-2xl mx-auto">Expert advice for every stage of your cat's life</p>
-
-                <!-- Category Filter -->
-                <div class="flex flex-wrap justify-center gap-2 mt-6">
-                    <a href="{{ route('care.index') }}"
-                       class="px-4 py-2 rounded-full {{ !request('category') ? 'bg-miffy-pink text-white' : 'bg-white text-miffy-brown' }} hover:bg-miffy-pink hover:text-white transition border border-miffy-brown">
-                        All Guides
-                    </a>
-                    @foreach(['Kitten Care', 'Senior Care', 'Nutrition', 'Grooming', 'Behavior', 'Health'] as $category)
-                        <a href="{{ route('care.index', ['category' => $category]) }}"
-                           class="px-4 py-2 rounded-full {{ request('category') == $category ? 'bg-miffy-pink text-white' : 'bg-white text-miffy-brown' }} hover:bg-miffy-pink hover:text-white transition border border-miffy-brown">
-                            {{ $category }}
-                        </a>
-                    @endforeach
-                </div>
+                <p class="text-miffy-brown max-w-2xl mx-auto">Expert advice for your feline friends</p>
             </div>
 
             <!-- Special Feature: Interactive Cat Care Quiz -->
@@ -75,7 +61,7 @@
                 </div>
             </div>
 
-            <!-- Video Tutorials Section -->
+            <!-- Video Tutorials Section - Enhanced with new videos -->
             <div class="miffy-card bg-white p-6 rounded-xl mb-12 border-2 border-miffy-brown">
                 <h2 class="text-2xl font-bold text-miffy-brown mb-6 flex items-center">
                     <img src="{{ asset('images/miffy/miffy-paw.png') }}" class="w-8 h-8 mr-2">
@@ -83,8 +69,41 @@
                 </h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Video 1 -->
-                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown">
+                    <!-- New Video 1 -->
+                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown transform hover:scale-105 transition duration-300">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/0XPRz8ZUkck" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-miffy-brown mb-2">Cat Grooming 101</h3>
+                            <p class="text-sm text-gray-600 mb-2">Complete guide to grooming your cat at home</p>
+                        </div>
+                    </div>
+
+                    <!-- New Video 2 -->
+                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown transform hover:scale-105 transition duration-300">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/WzuhuaeS0aQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-miffy-brown mb-2">Litter Box Training</h3>
+                            <p class="text-sm text-gray-600 mb-2">Essential tips for perfect litter box setup</p>
+                        </div>
+                    </div>
+
+                    <!-- New Video 3 -->
+                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown transform hover:scale-105 transition duration-300">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/rR6aXt-bRGs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-miffy-brown mb-2">Cat Playtime Essentials</h3>
+                            <p class="text-sm text-gray-600 mb-2">How to keep your cat active and engaged</p>
+                        </div>
+                    </div>
+
+                    <!-- Original Video 1 -->
+                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown transform hover:scale-105 transition duration-300">
                         <div class="aspect-w-16 aspect-h-9">
                             <iframe class="w-full h-64" src="https://www.youtube.com/embed/VZL1PVSjaQA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
@@ -94,8 +113,8 @@
                         </div>
                     </div>
 
-                    <!-- Video 2 -->
-                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown">
+                    <!-- Original Video 2 -->
+                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown transform hover:scale-105 transition duration-300">
                         <div class="aspect-w-16 aspect-h-9">
                             <iframe class="w-full h-64" src="https://www.youtube.com/embed/tpiyEe_CqB4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
@@ -105,8 +124,8 @@
                         </div>
                     </div>
 
-                    <!-- Video 3 -->
-                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown">
+                    <!-- Original Video 3 -->
+                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown transform hover:scale-105 transition duration-300">
                         <div class="aspect-w-16 aspect-h-9">
                             <iframe class="w-full h-64" src="https://www.youtube.com/embed/DaczPZlPrYM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
@@ -115,46 +134,26 @@
                             <p class="text-sm text-gray-600 mb-2">Decode your cat's body language</p>
                         </div>
                     </div>
-
-                    <!-- Video 4 -->
-                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown">
-                        <div class="aspect-w-16 aspect-h-9">
-                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/a_IA-8nQ4FY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-miffy-brown mb-2">Senior Cat Care</h3>
-                            <p class="text-sm text-gray-600 mb-2">Special care for older cats</p>
-                        </div>
-                    </div>
-
-                    <!-- Video 5 -->
-                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown">
-                        <div class="aspect-w-16 aspect-h-9">
-                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/q6nnacxDOUQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-miffy-brown mb-2">Cat Nutrition Guide</h3>
-                            <p class="text-sm text-gray-600 mb-2">What to feed your feline friend</p>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <!-- Care Guides Section -->
+            <!-- Care Guides Section - Improved layout -->
             @if($guides->isEmpty())
-                <div class="text-center miffy-card p-8 bg-white rounded-xl border-2 border-miffy-brown">
-                    <img src="{{ asset('images/miffy/miffy-character.png') }}" class="w-32 mx-auto mb-4">
-                    <p class="text-lg text-gray-600">No care guides found. Check back soon!</p>
-                </div>
+                <!-- Removed the "No care guides found" div as requested -->
             @else
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-miffy-brown mb-2">All Care Guides</h2>
+                    <div class="w-24 h-1 bg-miffy-pink mx-auto"></div>
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach($guides as $guide)
-                        <div class="miffy-card bg-white rounded-xl overflow-hidden hover:shadow-xl transition duration-300 border-2 border-miffy-brown">
+                        <div class="miffy-card bg-white rounded-xl overflow-hidden hover:shadow-xl transition duration-300 border-2 border-miffy-brown transform hover:-translate-y-2">
                             <div class="relative h-48 overflow-hidden">
                                 @if($guide->image_path)
                                     <img src="{{ asset('storage/' . $guide->image_path) }}"
                                          alt="{{ $guide->title }}"
-                                         class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                                         class="w-full h-full object-cover transition duration-500 hover:scale-110">
                                 @else
                                     <div class="w-full h-full bg-miffy-peach flex items-center justify-center">
                                         <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-32">

@@ -57,7 +57,7 @@
                     <p class="text-xs text-gray-500 mt-1">Max 2MB. JPG, PNG or GIF.</p>
                 </div>
 
-                <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded transition duration-300">
+                <button type="submit" class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-4 rounded transition duration-300 shadow-md hover:shadow-lg">
                     Submit Review
                 </button>
             </form>

@@ -9,12 +9,12 @@
 
         @auth
             <a href="{{ route('reviews.create') }}"
-               class="mb-6 inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+               class="mb-6 inline-block bg-teal-500 hover:bg-teal-600 text-yellow-900 font-bold py-2 px-4 rounded transition duration-300 shadow-md hover:shadow-lg">
                 Add Your Review
             </a>
         @else
             <p class="mb-6 text-gray-700">
-                <a href="{{ route('login') }}" class="text-orange-500 hover:underline">Login</a> to add your own review
+                <a href="{{ route('login') }}" class="text-teal-500 hover:underline font-medium">Login</a> to add your own review
             </p>
         @endauth
 
@@ -148,7 +148,7 @@
                     </p>
                     @auth
                         <a href="{{ route('reviews.create') }}?type={{ request('type') }}"
-                           class="mt-4 inline-block bg-orange-500 hover:bg-orange-600 text-pink-300 font-bold py-2 px-6 rounded transition duration-300">
+                           class="mt-4 inline-block bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-6 rounded transition duration-300 shadow-md hover:shadow-lg">
                             Add Review
                         </a>
                     @endif
