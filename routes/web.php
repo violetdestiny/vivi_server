@@ -27,6 +27,12 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // Adoption Corner
 
 // Adoption Routes
+Route::prefix('adoption')->group(function () {
+    Route::get('/', [AdoptionController::class, 'index'])->name('adoption.index');
+    Route::get('/{id}', [AdoptionController::class, 'show'])->name('adoption.show');
+    Route::get('/{id}/apply', [AdoptionController::class, 'applicationForm'])->name('adoption.application');
+    Route::post('/apply', [AdoptionController::class, 'apply'])->name('adoption.apply.submit');
+});
 // Add these routes inside your auth middleware group
 Route::middleware(['auth'])->group(function () {
     // Show create form

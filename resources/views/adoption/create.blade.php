@@ -2,11 +2,9 @@
 
 @section('content')
     <div class="w-4/5 mx-auto py-10">
-        <div class="text-center mb-12 relative">
-            <img src="{{ asset('images/miffy/miffy-character.png') }}" class="absolute -left-20 top-0 w-24 opacity-20 miffy-float">
+        <div class="text-center mb-12">
             <h1 class="text-4xl font-bold text-miffy-brown mb-4">Create New Blog Post</h1>
             <p class="text-miffy-brown">Share your cat stories and tips with our community</p>
-            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="absolute -right-20 bottom-0 w-24 opacity-20 miffy-float" style="animation-delay: 0.5s">
         </div>
 
         <div class="miffy-card bg-white p-8 rounded-xl border-2 border-miffy-brown">
@@ -127,16 +125,6 @@
         .miffy-button:hover {
             background-color: var(--miffy-brown);
             transform: scale(1.05);
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .miffy-float {
-            animation: float 4s ease-in-out infinite;
         }
     </style>
 @endsection

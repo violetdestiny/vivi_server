@@ -148,7 +148,7 @@
                     </p>
                     @auth
                         <a href="{{ route('reviews.create') }}?type={{ request('type') }}"
-                           class="mt-4 inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded transition duration-300">
+                           class="mt-4 inline-block bg-orange-500 hover:bg-orange-600 text-pink-300 font-bold py-2 px-6 rounded transition duration-300">
                             Add Review
                         </a>
                     @endif
