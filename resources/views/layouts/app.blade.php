@@ -181,7 +181,7 @@
             <!-- Logo -->
             <div class="flex items-center space-x-3">
                 <a href="{{ url('/') }}" class="miffy-logo text-2xl no-underline flex items-center">
-                    <img src="https://i.imgur.com/LQ5f8dE.png" class="h-10 mr-2" alt="Miffy">
+                    <img src="{{ asset('images/miffy/miffy-cats2.png') }}" class="h-10 mr-2" alt="Miffy">
                     Purrfect Posts
                 </a>
             </div>
@@ -307,10 +307,10 @@
 <footer class="miffy-footer py-6 text-white mt-8">
     <div class="container mx-auto px-6 text-center">
         <div class="flex justify-center mb-4 space-x-6">
-            <img src="https://i.imgur.com/LQ5f8dE.png" class="h-12">
-            <img src="https://i.imgur.com/8JtYQ7v.png" class="h-12">
-            <img src="https://i.imgur.com/9XkJQpC.png" class="h-12">
-            <img src="https://i.imgur.com/VbnUQpn.png" class="h-12">
+            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="h-12">
+            <img src="{{ asset('images/miffy/miffy-cats1.png') }}" class="h-12">
+            <img src="{{ asset('images/miffy/miffy-cats2.png') }}" class="h-12">
+            <img src="{{ asset('images/miffy/miffy-character.png') }}" class="h-12">
         </div>
         <p class="text-lg font-bold mb-2">Miffy's Purrfect Cat Blog</p>
         <p class="text-sm">© {{ date('Y') }} All rights reserved | Made with ♥ by Miffy's Friends</p>

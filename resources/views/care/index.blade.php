@@ -493,7 +493,7 @@
         }
         .miffy-button {
             background-color: var(--miffy-pink);
-            color: white;
+            color: #db9d9d;
             border-radius: 9999px;
             transition: all 0.3s ease;
             border: 2px solid var(--miffy-brown);
@@ -501,7 +501,7 @@
         }
         .miffy-button:hover {
             background-color: var(--miffy-brown);
-            color: white;
+            color:#F5C3C3;
             transform: scale(1.05);
         }
         .miffy-float {
@@ -517,10 +517,10 @@
         }
         /* Ensure text is visible on buttons */
         .bg-miffy-pink {
-            color: white;
+            color: #F5C3C3;
         }
         .bg-miffy-pink:hover {
-            color: white;
+            color: #F5C3C3;
         }
     </style>
 @endsection

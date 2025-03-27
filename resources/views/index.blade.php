@@ -119,7 +119,7 @@
             <div class="flex justify-center mb-4">
                 <img src="{{ asset('images/miffy/miffy-paw.png') }}" class="w-8 h-8 mx-2">
                 <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-8 h-8 mx-2">
-                <img src="{{ asset('images/miffy/miffy-paw.png') }}" class="w-8 h-8 mx-2">
+                <img src="{{ asset('images/miffy/miffy-cats1.png') }}" class="w-8 h-8 mx-2">
             </div>
             <h2 class="text-4xl font-bold py-10 text-miffy-brown">
                 Latest Cat Tales
@@ -149,7 +149,7 @@
             </div>
         </div>
         <div class="rounded-r-lg overflow-hidden">
-            <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="w-full h-full object-contain bg-miffy-peach p-8" alt="Miffy logo">
+            <img src="{{ asset('images/miffy/miffy-cats2.png') }}" class="w-full h-full object-contain bg-miffy-peach p-8" alt="Miffy logo">
         </div>
     </div>
 

@@ -9,7 +9,7 @@
         <!-- Hero Section with Miffy-themed Cat -->
         <div class="text-center py-20 relative">
             <div class="absolute -left-20 top-10 opacity-20 miffy-float">
-                <img src="{{ asset('images/miffy/miffy-cat2.png') }}" class="w-32">
+                <img src="{{ asset('images/miffy/miffy-cats2.png') }}" class="w-32">
             </div>
             <h1 class="text-6xl font-bold text-miffy-brown mb-6 animate-enter">
                 The Purr-fect Cat Blog
@@ -28,7 +28,7 @@
             <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
                 <a href="/blog/kitten-care-101" class="block">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="{{ asset('images/miffy/blog-kitten.jpg') }}"
+                        <img src="{{ asset('images/miffy/miffy-kitten.jpg') }}"
                              alt="Adorable kitten"
                              class="w-full h-full object-cover transition duration-500">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
@@ -51,7 +51,7 @@
             <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
                 <a href="/blog/understanding-cat-behavior" class="block">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="{{ asset('images/miffy/blog-behavior.jpg') }}"
+                        <img src="{{ asset('images/miffy/curios.jpg') }}"
                              alt="Cat showing curious behavior"
                              class="w-full h-full object-cover transition duration-500">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
@@ -74,7 +74,7 @@
             <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
                 <a href="/blog/diy-cat-toys" class="block">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="{{ asset('images/miffy/blog-toys.jpg') }}"
+                        <img src="{{ asset('images/miffy/miffy-paw.png') }}"
                              alt="Homemade cat toys"
                              class="w-full h-full object-cover transition duration-500">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
@@ -97,7 +97,7 @@
             <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
                 <a href="/blog/senior-cat-care" class="block">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="{{ asset('images/miffy/blog-senior.jpg') }}"
+                        <img src="{{ asset('images/miffy/miffy-cat-bg.jpg') }}"
                              alt="Senior cat resting"
                              class="w-full h-full object-cover transition duration-500">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
@@ -120,7 +120,7 @@
             <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
                 <a href="/blog/cat-nutrition-guide" class="block">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="{{ asset('images/miffy/blog-nutrition.jpg') }}"
+                        <img src="{{ asset('images/miffy/miffy-eating.jpg') }}"
                              alt="Healthy cat food"
                              class="w-full h-full object-cover transition duration-500">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
@@ -143,7 +143,7 @@
             <div class="miffy-card overflow-hidden hover:shadow-xl transition duration-300 animate-enter">
                 <a href="/blog/rescue-story-whiskers" class="block">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="{{ asset('images/miffy/blog-rescue.jpg') }}"
+                        <img src="{{ asset('images/miffy/cozy.jpg') }}"
                              alt="Rescue cat being cuddled"
                              class="w-full h-full object-cover transition duration-500">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-20"></div>
@@ -212,24 +212,22 @@
                 </div>
             </div>
             <div class="rounded-xl overflow-hidden border-2 border-miffy-brown">
-                <img src="{{ asset('images/miffy/miffy-cat1.png') }}"
+                <img src="{{ asset('images/miffy/miffy-cats3.jpg') }}"
                      alt="Miffy with cats"
                      class="w-full h-full object-cover">
             </div>
         </div>
 
         <!-- Newsletter Section -->
+        <!-- Newsletter Section -->
         <div class="bg-miffy-peach rounded-xl p-8 mb-20 text-center border-2 border-miffy-brown">
             <div class="max-w-2xl mx-auto">
-                <img src="{{ asset('images/miffy/miffy-cat2.png') }}" class="w-20 mx-auto mb-4">
-                <h2 class="text-3xl font-bold text-miffy-brown mb-2">Join Our Cat Community</h2>
-                <p class="text-gray-600 mb-6">Get weekly updates with cute cat stories and care tips</p>
-                <form class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <input type="email" placeholder="Your email" class="px-4 py-2 rounded-full border-2 border-miffy-brown focus:outline-none focus:ring-2 focus:ring-miffy-pink">
-                    <button type="submit" class="miffy-button px-6 py-2 rounded-full">
-                        Subscribe
-                    </button>
-                </form>
+                <img src="{{ asset('images/miffy/miffy-cats2.png') }}" class="w-20 mx-auto mb-4">
+                <h2 class="text-3xl font-bold text-miffy-brown mb-2">Login Now</h2>
+                <p class="text-gray-600 mb-6">Login so you can add your own comment and join the discussion</p>
+                <a href="{{ route('login') }}" class="miffy-button px-6 py-2 rounded-full inline-block">
+                    Go to Login Page
+                </a>
             </div>
         </div>
     </div>
