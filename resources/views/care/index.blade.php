@@ -4,11 +4,7 @@
     <div class="min-h-screen bg-miffy-peach">
         <div class="container mx-auto py-12 px-4">
             <!-- Header Section -->
-            <div class="text-center mb-12 relative">
-                <!-- Decorative Miffy elements -->
-                <img src="{{ asset('images/miffy/miffy-character.png') }}" class="absolute -left-20 top-0 w-24 opacity-20 miffy-float">
-                <img src="{{ asset('images/miffy/miffy-logo.png') }}" class="absolute -right-20 bottom-0 w-24 opacity-20 miffy-float" style="animation-delay: 0.5s">
-
+            <div class="text-center mb-12">
                 <h1 class="text-4xl font-bold text-miffy-brown mb-2">Miffy's Cat Care Guides</h1>
                 <p class="text-miffy-brown max-w-2xl mx-auto">Expert advice for every stage of your cat's life</p>
 
@@ -83,11 +79,64 @@
             <div class="miffy-card bg-white p-6 rounded-xl mb-12 border-2 border-miffy-brown">
                 <h2 class="text-2xl font-bold text-miffy-brown mb-6 flex items-center">
                     <img src="{{ asset('images/miffy/miffy-paw.png') }}" class="w-8 h-8 mr-2">
-                    Video Tutorials
+                    Cat Care Video Tutorials
                 </h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="videoContainer">
-                    <!-- Videos will be loaded dynamically -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Video 1 -->
+                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/VZL1PVSjaQA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-miffy-brown mb-2">Basic Cat Care Guide</h3>
+                            <p class="text-sm text-gray-600 mb-2">Essential tips for new cat owners</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/tpiyEe_CqB4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-miffy-brown mb-2">Cat Grooming Techniques</h3>
+                            <p class="text-sm text-gray-600 mb-2">How to properly groom your cat</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/DaczPZlPrYM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-miffy-brown mb-2">Understanding Cat Behavior</h3>
+                            <p class="text-sm text-gray-600 mb-2">Decode your cat's body language</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 4 -->
+                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/a_IA-8nQ4FY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-miffy-brown mb-2">Senior Cat Care</h3>
+                            <p class="text-sm text-gray-600 mb-2">Special care for older cats</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 5 -->
+                    <div class="bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/q6nnacxDOUQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-miffy-brown mb-2">Cat Nutrition Guide</h3>
+                            <p class="text-sm text-gray-600 mb-2">What to feed your feline friend</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -200,87 +249,6 @@
             ]
         };
 
-        // Cat care videos by category
-        const catVideos = [
-            {
-                id: "dQw4w9WgXcQ",
-                title: "Basic Cat Grooming",
-                description: "Learn how to properly groom your cat",
-                duration: "5:23",
-                categories: ["Grooming", "Kitten Care"]
-            },
-            {
-                id: "J---aiyznGQ",
-                title: "Litter Box Training",
-                description: "Essential tips for kittens",
-                duration: "3:45",
-                categories: ["Behavior", "Kitten Care"]
-            },
-            {
-                id: "9bZkp7q19f0",
-                title: "Cat First Aid Basics",
-                description: "What every cat owner should know",
-                duration: "7:12",
-                categories: ["Health"]
-            },
-            {
-                id: "JGwWNGJdvx8",
-                title: "Senior Cat Care",
-                description: "Special needs for older cats",
-                duration: "6:18",
-                categories: ["Senior Care"]
-            },
-            {
-                id: "kJQP7kiw5Fk",
-                title: "Healthy Cat Food",
-                description: "Nutrition guide for your feline",
-                duration: "4:32",
-                categories: ["Nutrition"]
-            },
-            {
-                id: "nYh-n7EOtMA",
-                title: "Cat Playtime Ideas",
-                description: "Keep your cat active and happy",
-                duration: "5:55",
-                categories: ["Behavior"]
-            }
-        ];
-
-        // Current category from URL
-        const currentCategory = new URLSearchParams(window.location.search).get('category') || 'all';
-
-        // Load videos based on category
-        function loadVideos() {
-            const videoContainer = document.getElementById('videoContainer');
-            videoContainer.innerHTML = '';
-
-            // Filter videos by current category
-            const filteredVideos = currentCategory === 'all'
-                ? catVideos
-                : catVideos.filter(video => video.categories.includes(currentCategory));
-
-            // Shuffle and take 3 videos
-            const selectedVideos = shuffleArray(filteredVideos).slice(0, 3);
-
-            selectedVideos.forEach(video => {
-                const videoElement = document.createElement('div');
-                videoElement.className = 'bg-miffy-peach rounded-lg overflow-hidden border border-miffy-brown';
-                videoElement.innerHTML = `
-                    <div class="aspect-w-16 aspect-h-9 bg-black">
-                        <iframe class="w-full h-48" src="https://www.youtube.com/embed/${video.id}"
-                            frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-                            encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-miffy-brown mb-2">${video.title}</h3>
-                        <p class="text-sm text-gray-600 mb-2">${video.description}</p>
-                        <span class="text-xs text-miffy-pink">Duration: ${video.duration}</span>
-                    </div>
-                `;
-                videoContainer.appendChild(videoElement);
-            });
-        }
-
         // Quiz functionality
         document.getElementById('startQuizBtn').addEventListener('click', function() {
             this.classList.add('hidden');
@@ -301,9 +269,9 @@
 
             question.options.forEach((option, i) => {
                 const optionElement = document.createElement('button');
-                optionElement.className = 'w-full text-left p-2 rounded bg-miffy-peach hover:bg-miffy-pink hover:text-white transition text-miffy-brown';
+                optionElement.className = 'w-full text-left p-3 rounded bg-miffy-peach hover:bg-miffy-pink hover:text-white transition text-miffy-brown';
                 optionElement.textContent = option;
-                optionElement.addEventListener('click', () => selectAnswer(i, question.category));
+                optionElement.addEventListener('click', () => selectAnswer(i, question));
                 optionsContainer.appendChild(optionElement);
             });
 
@@ -311,22 +279,35 @@
             document.getElementById('nextQuestionBtn').classList.add('hidden');
         }
 
-        function selectAnswer(selectedIndex, category) {
-            const question = quizQuestions[currentQuestion];
-            if (selectedIndex === question.correct) {
-                score++;
-            } else {
-                userWeakCategories.add(category);
-            }
-
-            // Highlight correct answer
+        function selectAnswer(selectedIndex, question) {
             const options = document.querySelectorAll('#quizOptions button');
-            options[question.correct].classList.add('bg-green-100', 'text-green-800', 'font-bold');
 
             // Disable all options
             options.forEach(option => {
                 option.disabled = true;
             });
+
+            // Highlight correct answer in green
+            options[question.correct].classList.add('bg-green-100', 'text-green-800', 'font-bold');
+
+            // Check if answer was correct
+            if (selectedIndex === question.correct) {
+                score++;
+                // Show feedback for correct answer
+                options[selectedIndex].classList.add('bg-green-100', 'text-green-800');
+                options[selectedIndex].innerHTML += ' <span class="ml-2">✓ Correct!</span>';
+            } else {
+                userWeakCategories.add(question.category);
+                // Highlight wrong answer in red
+                options[selectedIndex].classList.add('bg-red-100', 'text-red-800');
+                options[selectedIndex].innerHTML += ' <span class="ml-2">✗ Incorrect</span>';
+
+                // Show explanation
+                const explanation = document.createElement('div');
+                explanation.className = 'mt-3 p-3 bg-blue-50 text-blue-800 rounded-lg';
+                explanation.innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
+                document.getElementById('quizOptions').appendChild(explanation);
+            }
 
             // Show next button or results
             if (currentQuestion < quizQuestions.length - 1) {
@@ -454,31 +435,12 @@
             });
         }
 
-        // Helper function to shuffle array
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
-        // Load videos when page loads
+        // Add Font Awesome for Instagram icons
         document.addEventListener('DOMContentLoaded', function() {
-            loadVideos();
-
-            // Add Font Awesome for Instagram icons
             const faScript = document.createElement('script');
             faScript.src = 'https://kit.fontawesome.com/a076d05399.js';
             faScript.crossOrigin = 'anonymous';
             document.head.appendChild(faScript);
-        });
-
-        // Reload videos when category changes
-        document.querySelectorAll('.category-filter a').forEach(link => {
-            link.addEventListener('click', function() {
-                setTimeout(loadVideos, 100); // Small delay to allow URL to update
-            });
         });
     </script>
 
@@ -503,17 +465,6 @@
             background-color: var(--miffy-brown);
             color:#F5C3C3;
             transform: scale(1.05);
-        }
-        .miffy-float {
-            animation: float 4s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        .category-badge {
-            transition: all 0.3s ease;
         }
         /* Ensure text is visible on buttons */
         .bg-miffy-pink {

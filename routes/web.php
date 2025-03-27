@@ -57,3 +57,7 @@ Route::prefix('reviews')->group(function() {
     });
     Route::get('/{review}', [ProductReviewController::class, 'show'])->name('reviews.show');
 });
+// google auth
+
+Route::get('/auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('/auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleGoogleCallback']);

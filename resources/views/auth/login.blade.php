@@ -79,6 +79,20 @@
                                 {{ __('Login') }}
                             </button>
 
+                            <!-- Divider with "or" text -->
+                            <div class="w-full flex items-center my-6">
+                                <div class="flex-grow border-t-2 border-miffy-brown"></div>
+                                <span class="px-4 text-miffy-brown font-medium">or</span>
+                                <div class="flex-grow border-t-2 border-miffy-brown"></div>
+                            </div>
+
+                            <!-- Google Login Button -->
+                            <a href="{{ route('auth.google') }}"
+                               class="w-full flex items-center justify-center px-4 py-3 bg-white border-2 border-miffy-brown rounded-lg hover:bg-miffy-peach transition duration-300 mb-6">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="h-5 mr-3">
+                                <span class="font-bold text-miffy-brown">{{ __('Continue with Google') }}</span>
+                            </a>
+
                             @if (Route::has('register'))
                                 <p class="w-full text-center text-miffy-brown my-6 sm:my-8">
                                     {{ __("Don't have an account?") }}
@@ -139,6 +153,12 @@
         input:focus {
             outline: none;
             box-shadow: 0 0 0 2px var(--miffy-peach);
+        }
+
+        /* Google button hover effect */
+        [href="{{ route('auth.google') }}"]:hover {
+            transform: scale(1.02);
+            box-shadow: 2px 2px 0 var(--miffy-brown);
         }
     </style>
 @endsection

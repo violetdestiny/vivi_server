@@ -8,7 +8,7 @@
     <title>Purrfect Posts | Miffy's Cat Paradise</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="https://i.imgur.com/LQ5f8dE.png" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/miffy/miffy-logo.png') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Short+Stack&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     <style>
-        /* Miffy Aesthetic Theme */
+
         :root {
             --miffy-peach: #FFDAC7;
             --miffy-pink: #FF9AA2;
@@ -31,11 +31,6 @@
             background-color: var(--miffy-cream);
             padding-top: 80px;
             color: var(--miffy-brown);
-            background-image: url('https://i.imgur.com/JjQhZ3a.png');
-            background-attachment: fixed;
-            background-size: 300px;
-            background-position: right bottom;
-            background-repeat: no-repeat;
         }
 
         .miffy-nav {
@@ -69,19 +64,6 @@
         .miffy-link.active {
             background-color: var(--miffy-peach);
             color: var(--miffy-brown) !important;
-        }
-
-        .miffy-link:hover::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 10px;
-            background-image: url('https://i.imgur.com/5XJQk9G.png');
-            background-size: contain;
-            background-repeat: no-repeat;
         }
 
         .miffy-bg {
@@ -129,51 +111,14 @@
             box-shadow: 8px 8px 0 var(--miffy-peach);
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .miffy-float {
-            animation: float 4s ease-in-out infinite;
-        }
-
         .miffy-divider {
             height: 3px;
             background-color: var(--miffy-pink);
             margin: 2rem 0;
-            position: relative;
-        }
-
-        .miffy-divider::after {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 20px;
-            background-image: url('https://i.imgur.com/5XJQk9G.png');
-            background-size: contain;
-            background-repeat: no-repeat;
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-<!-- Decorative Miffy Elements -->
-<div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    <img src="https://i.imgur.com/LQ5f8dE.png"
-         class="absolute top-20 left-10 w-24 opacity-30 miffy-float"
-         style="animation-delay: 0.2s;">
-    <img src="https://i.imgur.com/8JtYQ7v.png"
-         class="absolute bottom-1/4 right-20 w-20 opacity-30 miffy-float"
-         style="animation-delay: 0.5s;">
-    <img src="https://i.imgur.com/9XkJQpC.png"
-         class="absolute top-1/3 right-1/4 w-16 opacity-20 miffy-float"
-         style="animation-delay: 0.8s;">
-</div>
-
 <!-- Fixed Navigation -->
 <nav class="fixed-nav miffy-nav">
     <div class="container mx-auto px-6 py-3">
@@ -222,7 +167,6 @@
                 @else
                     <div class="flex items-center space-x-3">
                         <span class="text-white font-bold">{{ Auth::user()->name }}</span>
-                        <img src="https://i.imgur.com/VbnUQpn.png" class="h-8 w-8 rounded-full border-2 border-white">
 
                         <!-- Added Create Post Button -->
                         <a href="{{ route('blog.create') }}" class="miffy-button px-3 py-1 text-sm no-underline">
