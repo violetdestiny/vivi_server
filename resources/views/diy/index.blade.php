@@ -1,19 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'DIY Pet Toys')
+@section('title', 'DIY Cat Toys')
 
 @section('content')
     <div class="container mx-auto px-4 py-8">
         <!-- Hero Section -->
         <div class="bg-gradient-to-r from-miffy-pink to-miffy-peach rounded-xl p-8 mb-12 text-center">
-            <h1 class="text-4xl font-bold text-miffy-brown mb-4">DIY Pet Toys</h1>
-            <p class="text-xl text-miffy-dark-peach mb-6">Create fun, safe, and budget-friendly toys for your furry friends!</p>
-            <div class="flex justify-center space-x-4">
-                <button id="filter-all" class="filter-btn active" data-filter="all">All Toys</button>
-                <button id="filter-cats" class="filter-btn" data-filter="cat">For Cats</button>
-                <button id="filter-dogs" class="filter-btn" data-filter="dog">For Dogs</button>
-                <button id="filter-birds" class="filter-btn" data-filter="bird">For Birds</button>
-            </div>
+            <h1 class="text-4xl font-bold text-miffy-brown mb-4">DIY Cat Toys</h1>
+            <p class="text-xl text-miffy-dark-peach mb-6">Create fun, safe, and budget-friendly toys for your feline friends!</p>
         </div>
 
         <!-- Difficulty Level Guide -->
@@ -40,7 +34,7 @@
             <!-- Toy 1: Cardboard Maze -->
             <div class="toy-card bg-white rounded-xl overflow-hidden shadow-lg border border-miffy-brown" data-pet="cat">
                 <div class="relative">
-                    <img src="{{ asset('images/diy/cardboard-maze.jpg') }}" alt="Cardboard Maze" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/miffy/miffy-cats3.jpg') }}" alt="Cardboard Maze" class="w-full h-48 object-cover">
                     <span class="difficulty-badge bg-green-500">Easy</span>
                 </div>
                 <div class="p-6">
@@ -60,32 +54,10 @@
                 </div>
             </div>
 
-            <!-- Toy 2: Braided T-Shirt Rope -->
-            <div class="toy-card bg-white rounded-xl overflow-hidden shadow-lg border border-miffy-brown" data-pet="dog">
-                <div class="relative">
-                    <img src="{{ asset('images/diy/braided-rope.jpg') }}" alt="Braided T-Shirt Rope" class="w-full h-48 object-cover">
-                    <span class="difficulty-badge bg-green-500">Easy</span>
-                </div>
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-miffy-brown mb-2">Braided T-Shirt Rope</h2>
-                    <p class="text-gray-700 mb-4">A durable tug toy made from old t-shirts.</p>
-
-                    <div class="mb-4">
-                        <h3 class="font-semibold text-miffy-brown">Materials:</h3>
-                        <ul class="list-disc list-inside text-sm text-gray-600">
-                            <li>3 old t-shirts</li>
-                            <li>Scissors</li>
-                        </ul>
-                    </div>
-
-                    <button class="view-tutorial-btn" data-toy="rope">View Tutorial</button>
-                </div>
-            </div>
-
-            <!-- Toy 3: Feather Wand -->
+            <!-- Toy 2: Feather Wand -->
             <div class="toy-card bg-white rounded-xl overflow-hidden shadow-lg border border-miffy-brown" data-pet="cat">
                 <div class="relative">
-                    <img src="{{ asset('images/diy/feather-wand.jpg') }}" alt="Feather Wand" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/miffy/miffy-cat-bg.jpg') }}" alt="Feather Wand" class="w-full h-48 object-cover">
                     <span class="difficulty-badge bg-yellow-500">Medium</span>
                 </div>
                 <div class="p-6">
@@ -106,57 +78,10 @@
                 </div>
             </div>
 
-            <!-- Toy 4: Puzzle Feeder -->
-            <div class="toy-card bg-white rounded-xl overflow-hidden shadow-lg border border-miffy-brown" data-pet="dog">
-                <div class="relative">
-                    <img src="{{ asset('images/diy/puzzle-feeder.jpg') }}" alt="Puzzle Feeder" class="w-full h-48 object-cover">
-                    <span class="difficulty-badge bg-red-500">Advanced</span>
-                </div>
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-miffy-brown mb-2">Puzzle Feeder</h2>
-                    <p class="text-gray-700 mb-4">Mental stimulation toy that dispenses treats.</p>
-
-                    <div class="mb-4">
-                        <h3 class="font-semibold text-miffy-brown">Materials:</h3>
-                        <ul class="list-disc list-inside text-sm text-gray-600">
-                            <li>Plastic bottle with lid</li>
-                            <li>Wooden base</li>
-                            <li>Nails/screws</li>
-                            <li>Drill</li>
-                        </ul>
-                    </div>
-
-                    <button class="view-tutorial-btn" data-toy="feeder">View Tutorial</button>
-                </div>
-            </div>
-
-            <!-- Toy 5: Bird Perch -->
-            <div class="toy-card bg-white rounded-xl overflow-hidden shadow-lg border border-miffy-brown" data-pet="bird">
-                <div class="relative">
-                    <img src="{{ asset('images/diy/bird-perch.jpg') }}" alt="Bird Perch" class="w-full h-48 object-cover">
-                    <span class="difficulty-badge bg-yellow-500">Medium</span>
-                </div>
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-miffy-brown mb-2">Natural Wood Perch</h2>
-                    <p class="text-gray-700 mb-4">Safe chewing and climbing surface for birds.</p>
-
-                    <div class="mb-4">
-                        <h3 class="font-semibold text-miffy-brown">Materials:</h3>
-                        <ul class="list-disc list-inside text-sm text-gray-600">
-                            <li>Untreated wood branches</li>
-                            <li>Bird-safe rope</li>
-                            <li>Drill</li>
-                        </ul>
-                    </div>
-
-                    <button class="view-tutorial-btn" data-toy="perch">View Tutorial</button>
-                </div>
-            </div>
-
-            <!-- Toy 6: Catnip Sock -->
+            <!-- Toy 3: Catnip Sock -->
             <div class="toy-card bg-white rounded-xl overflow-hidden shadow-lg border border-miffy-brown" data-pet="cat">
                 <div class="relative">
-                    <img src="{{ asset('images/diy/catnip-sock.jpg') }}" alt="Catnip Sock" class="w-full h-48 object-cover">
+                    <img src="{{ asset('images/miffy/miffy-eating.jpg') }}" alt="Catnip Sock" class="w-full h-48 object-cover">
                     <span class="difficulty-badge bg-green-500">Easy</span>
                 </div>
                 <div class="p-6">
@@ -175,6 +100,78 @@
                     <button class="view-tutorial-btn" data-toy="sock">View Tutorial</button>
                 </div>
             </div>
+
+            <!-- Toy 4: Scratching Post -->
+            <div class="toy-card bg-white rounded-xl overflow-hidden shadow-lg border border-miffy-brown" data-pet="cat">
+                <div class="relative">
+                    <img src="{{ asset('images/miffy/miffy-kitten.jpg') }}" alt="Scratching Post" class="w-full h-48 object-cover">
+                    <span class="difficulty-badge bg-red-500">Advanced</span>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-miffy-brown mb-2">DIY Scratching Post</h2>
+                    <p class="text-gray-700 mb-4">A sturdy scratching post covered with sisal rope.</p>
+
+                    <div class="mb-4">
+                        <h3 class="font-semibold text-miffy-brown">Materials:</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>Wooden base</li>
+                            <li>Wooden post</li>
+                            <li>Sisal rope</li>
+                            <li>Staple gun</li>
+                        </ul>
+                    </div>
+
+                    <button class="view-tutorial-btn" data-toy="scratch">View Tutorial</button>
+                </div>
+            </div>
+
+            <!-- Toy 5: Puzzle Box -->
+            <div class="toy-card bg-white rounded-xl overflow-hidden shadow-lg border border-miffy-brown" data-pet="cat">
+                <div class="relative">
+                    <img src="{{ asset('images/miffy/miffy-cats2.png') }}" alt="Puzzle Box" class="w-full h-48 object-cover">
+                    <span class="difficulty-badge bg-yellow-500">Medium</span>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-miffy-brown mb-2">Treat Puzzle Box</h2>
+                    <p class="text-gray-700 mb-4">Mental stimulation toy that dispenses treats.</p>
+
+                    <div class="mb-4">
+                        <h3 class="font-semibold text-miffy-brown">Materials:</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>Small cardboard box</li>
+                            <li>Toilet paper rolls</li>
+                            <li>Scissors</li>
+                            <li>Cat treats</li>
+                        </ul>
+                    </div>
+
+                    <button class="view-tutorial-btn" data-toy="puzzle">View Tutorial</button>
+                </div>
+            </div>
+
+            <!-- Toy 6: Cat Tent -->
+            <div class="toy-card bg-white rounded-xl overflow-hidden shadow-lg border border-miffy-brown" data-pet="cat">
+                <div class="relative">
+                    <img src="{{ asset('images/miffy/curios.jpg') }}" alt="Cat Tent" class="w-full h-48 object-cover">
+                    <span class="difficulty-badge bg-yellow-500">Medium</span>
+                </div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-miffy-brown mb-2">T-Shirt Cat Tent</h2>
+                    <p class="text-gray-700 mb-4">Cozy hideaway made from an old t-shirt.</p>
+
+                    <div class="mb-4">
+                        <h3 class="font-semibold text-miffy-brown">Materials:</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>Large t-shirt</li>
+                            <li>Wire hanger or cardboard</li>
+                            <li>Safety pins</li>
+                            <li>Small pillow</li>
+                        </ul>
+                    </div>
+
+                    <button class="view-tutorial-btn" data-toy="tent">View Tutorial</button>
+                </div>
+            </div>
         </div>
 
         <!-- Special Feature: Toy Builder -->
@@ -191,7 +188,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
-                            <img src="{{ asset('images/diy/fabric-icon.png') }}" class="w-8 h-8 mr-3">
+                            <img src="{{ asset('images/miffy/cozy.jpg') }}" class="w-8 h-8 mr-3">
                             <span class="font-medium text-gray-800">Fabric (T-shirts, socks)</span>
                         </div>
 
@@ -202,7 +199,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
-                            <img src="{{ asset('images/diy/cardboard-icon.png') }}" class="w-8 h-8 mr-3">
+                            <img src="{{ asset('images/miffy/miffy-cats2.png') }}" class="w-8 h-8 mr-3">
                             <span class="font-medium text-gray-800">Cardboard/Paper</span>
                         </div>
 
@@ -213,19 +210,19 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
-                            <img src="{{ asset('images/diy/wood-icon.png') }}" class="w-8 h-8 mr-3">
+                            <img src="{{ asset('images/miffy/miffy-cats1.png') }}" class="w-8 h-8 mr-3">
                             <span class="font-medium text-gray-800">Wood</span>
                         </div>
 
-                        <!-- Plastic Option -->
-                        <div class="material-option flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-miffy-pink transition" data-material="plastic">
+                        <!-- Yarn Option -->
+                        <div class="material-option flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-miffy-pink transition" data-material="yarn">
                             <div class="material-checkbox w-5 h-5 border-2 border-miffy-brown rounded-sm mr-3 flex items-center justify-center">
                                 <svg class="check-icon hidden w-4 h-4 text-miffy-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                                 </svg>
                             </div>
-                            <img src="{{ asset('images/diy/plastic-icon.png') }}" class="w-8 h-8 mr-3">
-                            <span class="font-medium text-gray-800">Plastic Bottles</span>
+                            <img src="{{ asset('images/miffy/miffy-character.png') }}" class="w-8 h-8 mr-3">
+                            <span class="font-medium text-gray-800">Yarn/String</span>
                         </div>
                     </div>
 
@@ -247,7 +244,7 @@
                             Select materials to see custom toy ideas
                         </p>
                     </div>
-                    <button id="generate-btn" class="mt-4 w-full bg-miffy-pink text-white py-3 px-6 rounded-full font-semibold hover:bg-pink-600 transition flex items-center justify-center">
+                    <button id="generate-btn" class="mt-4 w-full bg-[#FFB6C1] text-pink-400 py-3 px-6 rounded-full font-semibold hover:bg-[#FF69B4] transition flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
@@ -259,7 +256,7 @@
 
         <!-- Tutorial Modal -->
         <div id="tutorial-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-            <div class="bg-white rounded-xl p-8 max-w-2xl w-full max-h-screen overflow-y-auto">
+            <div class="bg-pink-200 rounded-xl p-8 max-w-2xl w-full max-h-screen overflow-y-auto">
                 <div class="flex justify-between items-center mb-6">
                     <h2 id="modal-title" class="text-2xl font-bold text-miffy-brown"></h2>
                     <button id="close-modal" class="text-gray-500 hover:text-gray-700">
@@ -276,12 +273,6 @@
     </div>
 
     <style>
-        .filter-btn {
-            @apply px-4 py-2 rounded-full text-white font-semibold bg-opacity-80 transition;
-        }
-        .filter-btn.active {
-            @apply bg-white text-miffy-pink bg-opacity-100 shadow-md;
-        }
         .difficulty-badge {
             @apply absolute top-2 right-2 text-white text-xs font-bold px-2 py-1 rounded-full;
         }
@@ -292,7 +283,7 @@
             transform: translateY(-5px);
         }
         .view-tutorial-btn {
-            @apply w-full bg-miffy-brown text-white py-2 px-4 rounded-lg font-medium hover:bg-brown-700 transition;
+            @apply w-full bg-miffy-brown to-pink-300 py-2 px-4 rounded-lg font-medium hover:bg-brown-700 transition;
         }
         .text-miffy-dark-peach {
             color: #ff9aa2;
@@ -300,23 +291,6 @@
     </style>
 
     <script>
-        // Filter toys by pet type
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-
-                const filter = this.dataset.filter;
-                document.querySelectorAll('.toy-card').forEach(card => {
-                    if (filter === 'all' || card.dataset.pet === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
         // Material Selection
         document.querySelectorAll('.material-option').forEach(option => {
             option.addEventListener('click', function() {
@@ -356,15 +330,28 @@
                     </ul>
                 </div>
             `;
+            } else if (materials.includes('fabric') && materials.includes('yarn')) {
+                preview.innerHTML = `
+                <div class="text-center">
+                    <h4 class="font-bold text-lg mb-2 text-miffy-brown">Fabric and Yarn Cat Teaser</h4>
+                    <p class="mb-3 text-gray-700">Create an interactive teaser toy with fabric and yarn!</p>
+                    <ul class="text-sm text-left list-disc list-inside space-y-1">
+                        <li>Cut fabric into small strips</li>
+                        <li>Tie yarn around a wooden stick</li>
+                        <li>Attach fabric strips to the yarn ends</li>
+                    </ul>
+                </div>
+            `;
             } else if (materials.includes('fabric')) {
                 preview.innerHTML = `
                 <div class="text-center">
-                    <h4 class="font-bold text-lg mb-2 text-miffy-brown">Braided Tug Toy</h4>
-                    <p class="mb-3 text-gray-700">Cut fabric into strips and braid for a durable tug toy!</p>
+                    <h4 class="font-bold text-lg mb-2 text-miffy-brown">Fabric Catnip Toy</h4>
+                    <p class="mb-3 text-gray-700">Make a simple catnip-filled fabric toy!</p>
                     <ul class="text-sm text-left list-disc list-inside space-y-1">
-                        <li>Cut 3 strips of fabric (2-3" wide)</li>
-                        <li>Braid tightly together</li>
-                        <li>Tie knots at each end</li>
+                        <li>Cut two identical fabric shapes</li>
+                        <li>Sew together leaving small opening</li>
+                        <li>Fill with catnip and stuffing</li>
+                        <li>Sew opening closed</li>
                     </ul>
                 </div>
             `;
@@ -380,10 +367,22 @@
                     </ul>
                 </div>
             `;
+            } else if (materials.includes('wood')) {
+                preview.innerHTML = `
+                <div class="text-center">
+                    <h4 class="font-bold text-lg mb-2 text-miffy-brown">Wooden Scratching Post</h4>
+                    <p class="mb-3 text-gray-700">Build a sturdy scratching surface for your cat!</p>
+                    <ul class="text-sm text-left list-disc list-inside space-y-1">
+                        <li>Sand a wooden post smooth</li>
+                        <li>Attach to a sturdy base</li>
+                        <li>Wrap with sisal rope (if available)</li>
+                    </ul>
+                </div>
+            `;
             } else {
                 preview.innerHTML = `
                 <div class="text-center">
-                    <h4 class="font-bold text-lg mb-2 text-miffy-brown">Custom Toy Combination</h4>
+                    <h4 class="font-bold text-lg mb-2 text-miffy-brown">Custom Cat Toy</h4>
                     <p class="text-gray-700">Combine your selected materials to create a unique toy!</p>
                     <p class="text-sm mt-2 text-gray-600">Check our tutorials for inspiration on how to combine these materials safely.</p>
                 </div>
@@ -409,34 +408,120 @@
                     <h4 class="font-bold mb-2 text-miffy-brown">Safety Tips</h4>
                     <ul class="list-disc list-inside space-y-1 text-gray-700">
                         <li>Ensure all edges are smooth to prevent cuts</li>
-                        <li>Supervise your pet during initial play</li>
+                        <li>Supervise your cat during initial play</li>
                         <li>Replace if it becomes too damaged</li>
                     </ul>
                 </div>
             `
             },
-            rope: {
-                title: "Braided T-Shirt Rope Tutorial",
+            wand: {
+                title: "Feather Wand Tutorial",
                 content: `
                 <h3 class="font-bold text-xl mb-3 text-miffy-brown">Step-by-Step Instructions</h3>
                 <ol class="list-decimal list-inside space-y-2 text-gray-700">
-                    <li>Cut 3 t-shirts into strips (about 2" wide)</li>
-                    <li>Gather 3 strips together and tie a knot at one end</li>
-                    <li>Braid the strips tightly</li>
-                    <li>Tie another knot at the other end</li>
-                    <li>For extra durability, you can braid multiple braids together</li>
+                    <li>Cut a length of string or elastic cord (about 18-24 inches)</li>
+                    <li>Tie one end securely to the wooden dowel</li>
+                    <li>Attach feathers to the other end of the string</li>
+                    <li>Optionally add small bells for sound stimulation</li>
+                    <li>Test the wand to ensure all attachments are secure</li>
                 </ol>
                 <div class="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                    <h4 class="font-bold mb-2 text-miffy-brown">Variations</h4>
+                    <h4 class="font-bold mb-2 text-miffy-brown">Play Tips</h4>
                     <ul class="list-disc list-inside space-y-1 text-gray-700">
-                        <li>Add knots along the length for chewing texture</li>
-                        <li>Use different colored shirts for visual appeal</li>
-                        <li>Make shorter versions for smaller dogs</li>
+                        <li>Mimic prey movements (quick, erratic motions)</li>
+                        <li>Let your cat "catch" the toy occasionally</li>
+                        <li>Store out of reach when not in use</li>
                     </ul>
                 </div>
             `
             },
-            // Add other tutorials similarly
+            sock: {
+                title: "Catnip Sock Toy Tutorial",
+                content: `
+                <h3 class="font-bold text-xl mb-3 text-miffy-brown">Step-by-Step Instructions</h3>
+                <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                    <li>Take a clean sock (preferably one without holes)</li>
+                    <li>Fill the toe section with about 2 tablespoons of dried catnip</li>
+                    <li>Add some stuffing or crumpled paper to give it shape</li>
+                    <li>Tie a knot at the top to secure the contents</li>
+                    <li>For extra appeal, tie the sock in the middle to create two sections</li>
+                </ol>
+                <div class="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                    <h4 class="font-bold mb-2 text-miffy-brown">Variations</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Use different colored socks for visual interest</li>
+                        <li>Add crinkly materials inside for sound</li>
+                        <li>Refresh with new catnip every few weeks</li>
+                    </ul>
+                </div>
+            `
+            },
+            scratch: {
+                title: "Scratching Post Tutorial",
+                content: `
+                <h3 class="font-bold text-xl mb-3 text-miffy-brown">Step-by-Step Instructions</h3>
+                <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                    <li>Cut a wooden base (at least 16" square for stability)</li>
+                    <li>Attach a 4x4 wooden post (height depends on your cat's size)</li>
+                    <li>Starting at the bottom, wrap sisal rope tightly around the post</li>
+                    <li>Secure with staples or nails every few inches</li>
+                    <li>Continue wrapping to the top and secure the end</li>
+                    <li>Sand any rough edges</li>
+                </ol>
+                <div class="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                    <h4 class="font-bold mb-2 text-miffy-brown">Placement Tips</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Place near where your cat already likes to scratch</li>
+                        <li>Make it tall enough for full stretching</li>
+                        <li>Consider placing near sleeping areas</li>
+                    </ul>
+                </div>
+            `
+            },
+            puzzle: {
+                title: "Treat Puzzle Box Tutorial",
+                content: `
+                <h3 class="font-bold text-xl mb-3 text-miffy-brown">Step-by-Step Instructions</h3>
+                <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                    <li>Take a small cardboard box (shoe box size works well)</li>
+                    <li>Cut holes in the sides large enough for paws</li>
+                    <li>Insert toilet paper rolls at different angles</li>
+                    <li>Secure rolls with tape or glue</li>
+                    <li>Place treats inside the rolls and box</li>
+                    <li>Close the box loosely so your cat can open it</li>
+                </ol>
+                <div class="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                    <h4 class="font-bold mb-2 text-miffy-brown">Engagement Tips</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Start with easy-to-reach treats</li>
+                        <li>Gradually make it more challenging</li>
+                        <li>Rotate different puzzle designs</li>
+                    </ul>
+                </div>
+            `
+            },
+            tent: {
+                title: "T-Shirt Cat Tent Tutorial",
+                content: `
+                <h3 class="font-bold text-xl mb-3 text-miffy-brown">Step-by-Step Instructions</h3>
+                <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                    <li>Bend a wire hanger into a circle or cut cardboard into an arch</li>
+                    <li>Place the hanger or cardboard arch inside a large t-shirt</li>
+                    <li>Position the neck hole as the entrance</li>
+                    <li>Use safety pins to secure the shirt to the frame</li>
+                    <li>Place a small pillow or blanket inside for comfort</li>
+                    <li>Tuck the sleeves inside or use them as extra padding</li>
+                </ol>
+                <div class="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                    <h4 class="font-bold mb-2 text-miffy-brown">Encouraging Use</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>Place familiar-smelling items inside initially</li>
+                        <li>Position in a quiet corner</li>
+                        <li>Toss treats inside to encourage exploration</li>
+                    </ul>
+                </div>
+            `
+            }
         };
 
         document.querySelectorAll('.view-tutorial-btn').forEach(btn => {
