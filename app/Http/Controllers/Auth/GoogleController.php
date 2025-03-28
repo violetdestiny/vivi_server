@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Laravel\Socialite\Facades\Socialite;
 
 class GoogleController extends Controller
 {
@@ -19,25 +19,27 @@ class GoogleController extends Controller
         try {
             $googleUser = Socialite::driver('google')->user();
 
-            $user = User::where('email', $googleUser->email)->first();
+            $user = User::where('email', $googleUser->getEmail())->first();
 
             if (!$user) {
                 $user = User::create([
-                    'name' => $googleUser->name,
-                    'email' => $googleUser->email,
-                    'password' => encrypt('google_password_placeholder'), // Consider a better approach
-                    'google_id' => $googleUser->id,
+                    'name' => $googleUser->getName(),
+                    'email' => $googleUser->getEmail(),
+                    'google_id' => $googleUser->getId(),
+                    'password' => encrypt('randomencryptedpassword')
                 ]);
             } else {
-                $user->update(['google_id' => $googleUser->id]);
+                $user->update([
+                    'google_id' => $googleUser->getId()
+                ]);
             }
 
             Auth::login($user);
-
-            return redirect()->intended('/');
+            return redirect('/');
 
         } catch (\Exception $e) {
-            return redirect()->route('login')->with('error', 'Google login failed: ' . $e->getMessage());
+            \Log::error('Google Auth Error: '.$e->getMessage());
+            return redirect('/login')->withErrors('Google login failed. Please try again.');
         }
     }
 }

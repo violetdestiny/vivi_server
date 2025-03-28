@@ -89,8 +89,9 @@
                             <!-- Google Login Button -->
                             <a href="{{ route('auth.google') }}"
                                class="w-full flex items-center justify-center px-4 py-3 bg-white border-2 border-miffy-brown rounded-lg hover:bg-miffy-peach transition duration-300 mb-6">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="h-5 mr-3">
-                                <span class="font-bold text-miffy-brown">{{ __('Continue with Google') }}</span>
+
+
+                                continue with Google
                             </a>
 
                             @if (Route::has('register'))

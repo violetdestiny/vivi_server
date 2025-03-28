@@ -4,26 +4,31 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
 
 class Post extends Model
 {
     use HasFactory;
-    use Sluggable;
 
-    protected $fillable = ['title', 'slug', 'description', 'image_path', 'user_id'];
+    protected $fillable = [
+        'title',
+        'description',
+        'category',
+        'image_path',
+        'user_id',
+        'slug'
+    ];
 
+    protected $dates = ['created_at'];
+
+    // Relationship to user
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function sluggable(): array
+    // Get the route key name (for using slugs in URLs)
+    public function getRouteKeyName()
     {
-        return [
-            'slug' => [
-                'source' => 'title'
-            ]
-        ];
+        return 'slug';
     }
 }
