@@ -12,19 +12,25 @@ Upload Cute Pics 📸 – Add adorable cat photos to your reviews.
 
 <img width="1702" alt="image" src="https://github.com/user-attachments/assets/885cdf2c-2500-487a-8aa3-94afd02aed57" />
 
-<img width="1702" alt="image" src="https://github.com/user-attachments/assets/4b8ef5a2-81a9-4acd-8547-56cd2c12f337" />
+<img width="1703" alt="Screenshot 2025-04-10 at 17 10 42" src="https://github.com/user-attachments/assets/2dea30e9-91d4-4a51-8ba7-b6e60654cf95" />
 
-<img width="1702" alt="image" src="https://github.com/user-attachments/assets/6eb3a06c-a558-482d-8306-cc7f639bba06" />
-
-
-<img width="1702" alt="image" src="https://github.com/user-attachments/assets/5002aa3e-7507-4100-b6b1-5ced2533865b" />
-<img width="1702" alt="image" src="https://github.com/user-attachments/assets/954fb41b-1c91-46b1-9d84-68003bb907a6" />
+<img width="1708" alt="Screenshot 2025-04-10 at 17 11 34" src="https://github.com/user-attachments/assets/d62b279f-8b49-4456-8296-824f38372d06" />
 
 
-<img width="1702" alt="image" src="https://github.com/user-attachments/assets/7a1ca84d-bf22-4338-8ada-75235006f3bf" />
+
+<img width="1693" alt="Screenshot 2025-04-10 at 17 11 56" src="https://github.com/user-attachments/assets/dbadba0e-a4dd-442d-ad0e-8d19815c80d1" />
 
 
-<img width="1702" alt="image" src="https://github.com/user-attachments/assets/f5bdea17-4027-4c4e-84a2-46dcb4512e26" />
+<img width="1706" alt="Screenshot 2025-04-10 at 17 12 25" src="https://github.com/user-attachments/assets/9ac6979d-9db2-41e2-b0ad-c588b082f44d" />
+
+<img width="1704" alt="Screenshot 2025-04-10 at 17 13 18" src="https://github.com/user-attachments/assets/b95b4745-960c-4c5b-aa03-d72e65c80a49" />
+
+
+
+<img width="1709" alt="Screenshot 2025-04-10 at 17 13 38" src="https://github.com/user-attachments/assets/e0b0ed02-72fe-4091-a5a3-3d94809ca601" />
+
+
+
 
 
 
