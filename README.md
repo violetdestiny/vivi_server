@@ -37,7 +37,7 @@ Upload Cute Pics 📸 – Add adorable cat photos to your reviews.
 Explore Cat Categories 🏷️ – Find reviews for food, toys, vets, and cat cafes.
 
 This project is built with Laravel and designed to be warm, friendly, and full of cat-titude!
-<img width="1702" alt="image" src="https://github.com/user-attachments/assets/4609ad97-02fa-4447-92de-d8f85f8683eb" />
+
 
 
 
