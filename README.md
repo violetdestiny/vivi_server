@@ -10,20 +10,28 @@ Rate with Paw-some Stars ⭐⭐⭐⭐⭐ – Give 1-5 stars to show how much you
 
 Upload Cute Pics 📸 – Add adorable cat photos to your reviews.
 
+the main page you can go from here into each of the five pages , the join community will take you to the login/registaration
+
 <img width="1702" alt="image" src="https://github.com/user-attachments/assets/885cdf2c-2500-487a-8aa3-94afd02aed57" />
+the login page with an option to use google login 
 
 <img width="1703" alt="Screenshot 2025-04-10 at 17 10 42" src="https://github.com/user-attachments/assets/2dea30e9-91d4-4a51-8ba7-b6e60654cf95" />
+care guides page that includes a quiz and a video tutorials on how to properly groom a cat 
 
 <img width="1708" alt="Screenshot 2025-04-10 at 17 11 34" src="https://github.com/user-attachments/assets/d62b279f-8b49-4456-8296-824f38372d06" />
-
+DIY toys page that includes video tutorials form easy to advanced , you click to see further instructions
 
 
 <img width="1693" alt="Screenshot 2025-04-10 at 17 11 56" src="https://github.com/user-attachments/assets/dbadba0e-a4dd-442d-ad0e-8d19815c80d1" />
 
-
+a cutom toy generator that the user can select available materials from then, vivi_server will suggest options for toys they can make with a tutorial included
 <img width="1706" alt="Screenshot 2025-04-10 at 17 12 25" src="https://github.com/user-attachments/assets/9ac6979d-9db2-41e2-b0ad-c588b082f44d" />
 
+
+reviews page , where the user can see reviews of the website
 <img width="1704" alt="Screenshot 2025-04-10 at 17 13 18" src="https://github.com/user-attachments/assets/b95b4745-960c-4c5b-aa03-d72e65c80a49" />
+
+if the user had chosen to join the community, they are able to add their own review to it
 
 
 
